@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\User;
 use Egal\Auth\Tokens\UserMasterRefreshToken;
+use Egal\Auth\Tokens\UserMasterToken;
 use Egal\Auth\Tokens\UserServiceToken;
 use Egal\AuthServiceDependencies\Exceptions\UserNotIdentifiedException;
 use Exception;
@@ -27,24 +28,31 @@ class UserService
 
     }
 
-    public static function setTokens(User $user): array
+    public static function setTokens(int|string $authIdentifier, array $authInformation): array
     {
         $umrt = new UserMasterRefreshToken();
         $umrt->setSigningKey(config('app.service_key'));
-        $umrt->setAuthIdentification($user->getAuthIdentifier());
+        $umrt->setAuthIdentification($authIdentifier);
 
         $serviceName = (config('app.service_name'));
         $serviceKey = (config('app.service_key'));
 
         $ust = new UserServiceToken();
         $ust->setSigningKey($serviceKey);
-        $ust->setAuthInformation($user->generateAuthInformation());
+        $ust->setAuthInformation($authInformation);
         $ust->setTargetServiceName($serviceName);
 
         return [
             'token' => $ust->generateJWT(),
             'refresh_token' => $umrt->generateJWT()
         ];
+    }
+
+    public static function checkRefreshToken(string $refreshToken): UserMasterRefreshToken
+    {
+        $oldUmrt = UserMasterRefreshToken::fromJWT($refreshToken, config('app.service_key'));
+        $oldUmrt->isAliveOrFail();
+        return $oldUmrt;
     }
 
 }

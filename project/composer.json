@@ -7,7 +7,8 @@
     "require": {
         "php": "^8.0",
         "egal/framework": "v2.4.0",
-        "laravel/lumen-framework": "^8.0"
+        "laravel/lumen-framework": "^8.0",
+        "sixsad/helpers": "v1.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
