@@ -1,0 +1,55 @@
+version: "3.9"
+services:
+  rabbitmq:
+    environment:
+      RABBITMQ_USERNAME: ${RABBITMQ_USERNAME:-admin}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-password}
+      RABBITMQ_PLUGINS: rabbitmq_management,rabbitmq_consistent_hash_exchange
+    ports:
+      - ${RABBITMQ_PORT:-5672}:5672
+      - ${RABBITMQ_MANAGER_PORT:-15672}:15672
+
+  web-service:
+    environment:
+      PROJECT_NAME: ${PROJECT_NAME:-project}
+      APP_SERVICE_NAME: ${APP_SERVICE_NAME:-core}
+      RABBITMQ_HOST: ${PROJECT_NAME:-project}-rabbitmq
+      RABBITMQ_USER: ${RABBITMQ_USERNAME:-admin}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-password}
+      WAIT_HOSTS: ${PROJECT_NAME:-project}-rabbitmq:5672
+    ports:
+      - ${WEB_SERVICE_PORT:-80}:8080
+
+  database:
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME:-core}
+      POSTGRES_USER: ${DATABASE_USER:-postgres}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-password}
+    volumes:
+      - ${DATABASE_LOCAL_STORAGE:-../db_dump}:/var/lib/postgresql/data
+    ports:
+      - ${DATABASE_PORT:-5432}:5432
+
+  core-service:
+    environment:
+      APP_SERVICE_NAME: ${APP_SERVICE_NAME:-core}
+      APP_SERVICE_KEY: ${APP_SERVICE_KEY:-w8D3A9XNhR0ckQlGo*%LWFfPzuHEKxj4}
+      APP_DEBUG: ${APP_DEBUG:-true}
+      DB_CONNECTION: ${APP_DB_CONNECTION:-pgsql}
+      DB_HOST: ${PROJECT_NAME:-project}-database
+      DB_PORT: ${DATABASE_PORT:-5432}
+      DB_DATABASE: ${DATABASE_NAME:-core}
+      DB_USERNAME: ${DATABASE_USER:-postgres}
+      DB_PASSWORD: ${DATABASE_PASSWORD:-password}
+      RABBITMQ_HOST: ${PROJECT_NAME:-project}-rabbitmq
+      RABBITMQ_USER: ${RABBITMQ_USERNAME:-admin}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-password}
+      WAIT_HOSTS: ${PROJECT_NAME:-project}-rabbitmq:5672, ${PROJECT_NAME:-project}-database:5432
+    volumes:
+      - ../project/:/app/
+    command: ./artisan egal:run
+
+  adminer:
+    ports:
+      - ${ADMINER_PORT:-8080}:8080
+
