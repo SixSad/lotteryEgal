@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72ba47f063da8840b6c2d998c5c64010",
+    "content-hash": "33a813ab8bd75bc1884be5f18a5eb1db",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -4417,6 +4417,46 @@
                 }
             ],
             "time": "2022-11-05T23:03:38+00:00"
+        },
+        {
+            "name": "sixsad/helpers",
+            "version": "v1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SixSad/helpers.git",
+                "reference": "c778f94fb8f587bd52a4a776ca16358a58903b34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SixSad/helpers/zipball/c778f94fb8f587bd52a4a776ca16358a58903b34",
+                "reference": "c778f94fb8f587bd52a4a776ca16358a58903b34",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sixsad\\Helpers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SixSad",
+                    "email": "vizxs@bk.ru"
+                }
+            ],
+            "description": "helpers for laravel microservices",
+            "support": {
+                "issues": "https://github.com/SixSad/helpers/issues",
+                "source": "https://github.com/SixSad/helpers/tree/v1.2"
+            },
+            "time": "2022-12-02T12:57:56+00:00"
         },
         {
             "name": "symfony/console",

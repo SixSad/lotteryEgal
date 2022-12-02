@@ -2,6 +2,13 @@
 
 namespace App\Providers;
 
+use App\Events\LotteryGameMatchClosingEvent;
+use App\Events\LotteryGameMatchUserCreatingEvent;
+use App\Listeners\CheckGamerCountListener;
+use App\Listeners\DuplicationCheckListener;
+use App\Listeners\PickingWinnerListener;
+use App\Listeners\ScoringPointsListener;
+use App\Listeners\ValidatingClosingRequestListener;
 use Laravel\Lumen\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider
@@ -12,9 +19,15 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        \App\Events\ExampleEvent::class => [
-            \App\Listeners\ExampleListener::class,
+        LotteryGameMatchUserCreatingEvent::class => [
+            DuplicationCheckListener::class,
+            CheckGamerCountListener::class
         ],
+        LotteryGameMatchClosingEvent::class => [
+            ValidatingClosingRequestListener::class,
+            PickingWinnerListener::class,
+            ScoringPointsListener::class
+        ]
     ];
 
     /**

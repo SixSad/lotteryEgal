@@ -1,0 +1,2191 @@
+{
+	"info": {
+		"_postman_id": "a7642308-8e5c-4833-bbd8-6da85ad41b72",
+		"name": "LotteryCollection",
+		"description": "# Lottery Egal App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19170230"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getItems",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/User/getItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"User",
+								"getItems"
+							]
+						},
+						"description": "# Запрос на получение всех пользователей администратором\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| none | none |\n\n### ResponseExample:\n\n``` json\n\"data\":{\n    \"items\": [\n                {\n                    \"id\": 1,\n                    \"first_name\": \"Ivanov\",\n                    \"last_name\": \"Ivan\",\n                    \"email\": \"mail@mail.ru\",\n                    \"is_admin\": true,\n                    \"points\": 0,\n                    \"created_at\": \"2022-12-02T11:23:01.000000Z\",\n                    \"updated_at\": \"2022-12-02T13:49:01.000000Z\"\n                },\n    ]\n}\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/getItems",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"getItems"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 14:40:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2041"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"6284915e-f8cd-411a-b903-9079f222764c\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"getItems\",\n        \"parameters\": [],\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDFAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjQxNiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTE6MjM6MDEuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDEzOjQ5OjAxLjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDEsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNDo0OToxNC4zOTAzNTdaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.iwqiNnyJH2dNN2IllDnLuF7GKySGeAFVYqRag3YKVns\"\n    },\n    \"action_result\": {\n        \"uuid\": \"26f25834-f23e-401f-ab82-8ea4d84072a7\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"items\": [\n                {\n                    \"id\": 101,\n                    \"first_name\": \"Ivanov\",\n                    \"last_name\": \"Ivan\",\n                    \"email\": \"mail1@mail.ru\",\n                    \"is_admin\": true,\n                    \"points\": 416,\n                    \"created_at\": \"2022-12-02T11:23:01.000000Z\",\n                    \"updated_at\": \"2022-12-02T13:49:01.000000Z\"\n                },\n                {\n                    \"id\": 99,\n                    \"first_name\": \"Gennaro\",\n                    \"last_name\": \"Cruickshank\",\n                    \"email\": \"rlakin@yahoo.com\",\n                    \"is_admin\": false,\n                    \"points\": 0,\n                    \"created_at\": \"2022-12-02T06:44:50.000000Z\",\n                    \"updated_at\": \"2022-12-02T06:44:50.000000Z\"\n                },\n                {\n                    \"id\": 97,\n                    \"first_name\": \"Christelle\",\n                    \"last_name\": \"Rolfson\",\n                    \"email\": \"genevieve48@franecki.com\",\n                    \"is_admin\": false,\n                    \"points\": 0,\n                    \"created_at\": \"2022-12-02T06:44:49.000000Z\",\n                    \"updated_at\": \"2022-12-02T06:44:49.000000Z\"\n                },\n                {\n                    \"id\": 98,\n                    \"first_name\": \"Antone\",\n                    \"last_name\": \"Weber\",\n                    \"email\": \"langosh.kirstin@emmerich.org\",\n                    \"is_admin\": false,\n                    \"points\": 1248,\n                    \"created_at\": \"2022-12-02T06:44:50.000000Z\",\n                    \"updated_at\": \"2022-12-02T13:54:57.000000Z\"\n                },\n                {\n                    \"id\": 100,\n                    \"first_name\": \"Andrey\",\n                    \"last_name\": \"Petrov\",\n                    \"email\": \"zxc@asd.ru\",\n                    \"is_admin\": true,\n                    \"points\": 932,\n                    \"created_at\": \"2022-12-02T06:45:15.000000Z\",\n                    \"updated_at\": \"2022-12-02T13:57:30.000000Z\"\n                },\n                {\n                    \"id\": 103,\n                    \"first_name\": \"Ivanov\",\n                    \"last_name\": \"Ivan\",\n                    \"email\": \"mail2@mail.ru\",\n                    \"is_admin\": false,\n                    \"points\": 832,\n                    \"created_at\": \"2022-12-02T14:38:19.000000Z\",\n                    \"updated_at\": \"2022-12-02T14:40:08.000000Z\"\n                }\n            ]\n        }\n    },\n    \"action_error\": null\n}"
+						},
+						{
+							"name": "failed(403)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/getItems",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"getItems"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 14:48:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "358"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"845a74e3-4655-4adf-bcc5-f27f3174116c\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"getItems\",\n        \"parameters\": [],\n        \"token\": null\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"31969708-8464-4314-8df4-2161e24d0af0\",\n        \"type\": \"action_error\",\n        \"code\": 403,\n        \"message\": \"No access to action call!\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributes\": {\r\n        \"first_name\": \"Ivanov\",\r\n        \"last_name\": \"Ivan\",\r\n        \"email\": \"mail@mail.ru\",\r\n        \"password\": \"zxcqwe123\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/User/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"User",
+								"create"
+							]
+						},
+						"description": "# Запрос на регистрацию пользователя\n\n### Requested attributes:\n\n| Attribute | Required |\n| --- | --- |\n| first_name | + |\n| last_name | + |\n| email | + |\n| password | + |\n\n### ResponseExample:\n\n``` json\n\"data\": {\n            \"id\": 0\n            \"first_name\": \"Ivanov\",\n            \"last_name\": \"Ivan\",\n            \"email\": \"mail@mail.ru\",\n            \"updated_at\": \"2022-12-02T14:41:11.000000Z\",\n            \"created_at\": \"2022-12-02T14:41:11.000000Z\",\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"email\": \"mail@mail.ru\",\r\n        \"first_name\": \"Ivanov\",\r\n        \"last_name\": \"Ivan\",\r\n        \"password\": \"zxcqwe123\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 11:23:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "544"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"3760407c-8048-4e2a-b68b-fc6a5cfd2465\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"create\",\n        \"parameters\": {\n            \"attributes\": {\n                \"email\": \"mail@mail.ru\",\n                \"first_name\": \"Ivanov\",\n                \"last_name\": \"Ivan\",\n                \"password\": \"zxcqwe123\"\n            }\n        },\n        \"token\": null\n    },\n    \"action_result\": {\n        \"uuid\": \"f5c8f93a-6eb8-4918-a307-ab7cdf4d8e6b\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"email\": \"mail@mail.ru\",\n            \"first_name\": \"Ivanov\",\n            \"last_name\": \"Ivan\",\n            \"updated_at\": \"2022-12-02T11:23:01.000000Z\",\n            \"created_at\": \"2022-12-02T11:23:01.000000Z\",\n            \"id\": 101\n        }\n    },\n    \"action_error\": null\n}"
+						},
+						{
+							"name": "failed(405)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"email\": \"mail@mail.ru\",\r\n        \"first_name\": \"Ivanov\",\r\n        \"last_name\": \"Ivan\",\r\n        \"password\": \"zxcqwe123\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"create"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 11:23:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "484"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"a5c14366-33f9-41b1-8325-178c875e6d62\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"create\",\n        \"parameters\": {\n            \"attributes\": {\n                \"email\": \"mail@mail.ru\",\n                \"first_name\": \"Ivanov\",\n                \"last_name\": \"Ivan\",\n                \"password\": \"zxcqwe123\"\n            }\n        },\n        \"token\": null\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"dab1d266-797c-4c0a-9504-6d6dc8955b3e\",\n        \"type\": \"action_error\",\n        \"code\": 405,\n        \"message\": \"Validation failed! The email has already been taken.\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login(user)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().action_result.data.token)\r",
+									"pm.environment.set('refreshToken', pm.response.json().action_result.data.refresh_token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributes\": {\r\n        \"email\": \"user@user.com\",\r\n        \"password\": \"user\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/User/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"User",
+								"login"
+							]
+						},
+						"description": "StartFragment\n\n# Запрос на авторизацию пользователя\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| email | + |\n| password | + |\n\n### ResponseExample:\n\n``` json\n\"data\": {\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDFAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjQxNiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTE6MjM6MDEuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDEzOjQ5OjAxLjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDEsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNDo0OToxNC4zOTAzNTdaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.iwqiNnyJH2dNN2IllDnLuF7GKySGeAFVYqRag3YKVns\",\n            \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidW1ydCIsImF1dGhfaWRlbnRpZmljYXRpb24iOjEwMSwiYWxpdmVfdW50aWwiOiIyMDIyLTEyLTA5VDE0OjM5OjE0LjM4MTU0N1oifQ.HL59RO9WCTzp_j6SGlPHhgfVrYVky5qlBS7e6rcbbWI\"\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"email\": \"mail@mail.ru\",\r\n        \"password\": \"zxcqwe123\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 11:23:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1127"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"3f4eaae0-f793-42e4-8a2a-3bea99076a68\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"login\",\n        \"parameters\": {\n            \"attributes\": {\n                \"email\": \"mail@mail.ru\",\n                \"password\": \"zxcqwe123\"\n            }\n        },\n        \"token\": null\n    },\n    \"action_result\": {\n        \"uuid\": \"9a2c88cd-7fb5-4fd1-9e51-e193658ac90e\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbEBtYWlsLnJ1IiwiaXNfYWRtaW4iOmZhbHNlLCJwb2ludHMiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDIyLTEyLTAyVDExOjIzOjAxLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMi0xMi0wMlQxMToyMzowMS4wMDAwMDBaIiwiYXV0aF9pZGVudGlmaWNhdGlvbiI6MTAxLCJyb2xlcyI6WyJ1c2VyIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxMTozMzozOC42MDM3MDRaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.0Q7y8I2V_bkvNTR_7DQK8qb0n_CCf-iwl0EKFA00U60\",\n            \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidW1ydCIsImF1dGhfaWRlbnRpZmljYXRpb24iOjEwMSwiYWxpdmVfdW50aWwiOiIyMDIyLTEyLTA5VDExOjIzOjM4LjYwMzQ1NloifQ.6rHs5QQQo2DEnMgIbvqd1i8_hb3lyCKrWwYJ4cvljcU\"\n        }\n    },\n    \"action_error\": null\n}"
+						},
+						{
+							"name": "failed(401)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"email\": \"mail@mail1.ru\",\r\n        \"password\": \"zxcqwe123\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 11:26:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "419"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"f40e396e-8859-4bf0-b5cd-73046a1cdba9\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"login\",\n        \"parameters\": {\n            \"attributes\": {\n                \"email\": \"mail@mail1.ru\",\n                \"password\": \"zxcqwe123\"\n            }\n        },\n        \"token\": null\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"b8e56ba0-bf19-4874-801c-fbc113d86807\",\n        \"type\": \"action_error\",\n        \"code\": 401,\n        \"message\": \"Incorrect Email or password!\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login(admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().action_result.data.token)\r",
+									"pm.environment.set('refreshToken', pm.response.json().action_result.data.refresh_token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributes\": {\r\n        \"email\": \"admin@admin.com\",\r\n        \"password\": \"admin\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/User/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"User",
+								"login"
+							]
+						},
+						"description": "StartFragment\n\n# Запрос на авторизацию пользователя\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| email | + |\n| password | + |\n\n### ResponseExample:\n\n``` json\n\"data\": {\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDFAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjQxNiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTE6MjM6MDEuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDEzOjQ5OjAxLjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDEsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNDo0OToxNC4zOTAzNTdaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.iwqiNnyJH2dNN2IllDnLuF7GKySGeAFVYqRag3YKVns\",\n            \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidW1ydCIsImF1dGhfaWRlbnRpZmljYXRpb24iOjEwMSwiYWxpdmVfdW50aWwiOiIyMDIyLTEyLTA5VDE0OjM5OjE0LjM4MTU0N1oifQ.HL59RO9WCTzp_j6SGlPHhgfVrYVky5qlBS7e6rcbbWI\"\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"email\": \"mail@mail.ru\",\r\n        \"password\": \"zxcqwe123\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 11:23:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1127"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"3f4eaae0-f793-42e4-8a2a-3bea99076a68\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"login\",\n        \"parameters\": {\n            \"attributes\": {\n                \"email\": \"mail@mail.ru\",\n                \"password\": \"zxcqwe123\"\n            }\n        },\n        \"token\": null\n    },\n    \"action_result\": {\n        \"uuid\": \"9a2c88cd-7fb5-4fd1-9e51-e193658ac90e\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbEBtYWlsLnJ1IiwiaXNfYWRtaW4iOmZhbHNlLCJwb2ludHMiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDIyLTEyLTAyVDExOjIzOjAxLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMi0xMi0wMlQxMToyMzowMS4wMDAwMDBaIiwiYXV0aF9pZGVudGlmaWNhdGlvbiI6MTAxLCJyb2xlcyI6WyJ1c2VyIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxMTozMzozOC42MDM3MDRaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.0Q7y8I2V_bkvNTR_7DQK8qb0n_CCf-iwl0EKFA00U60\",\n            \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidW1ydCIsImF1dGhfaWRlbnRpZmljYXRpb24iOjEwMSwiYWxpdmVfdW50aWwiOiIyMDIyLTEyLTA5VDExOjIzOjM4LjYwMzQ1NloifQ.6rHs5QQQo2DEnMgIbvqd1i8_hb3lyCKrWwYJ4cvljcU\"\n        }\n    },\n    \"action_error\": null\n}"
+						},
+						{
+							"name": "failed(401)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"email\": \"mail@mail1.ru\",\r\n        \"password\": \"zxcqwe123\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 11:26:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "419"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"f40e396e-8859-4bf0-b5cd-73046a1cdba9\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"login\",\n        \"parameters\": {\n            \"attributes\": {\n                \"email\": \"mail@mail1.ru\",\n                \"password\": \"zxcqwe123\"\n            }\n        },\n        \"token\": null\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"b8e56ba0-bf19-4874-801c-fbc113d86807\",\n        \"type\": \"action_error\",\n        \"code\": 401,\n        \"message\": \"Incorrect Email or password!\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "refreshTokens",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().action_result.data.token)\r",
+									"pm.environment.set('refreshToken', pm.response.json().action_result.data.refresh_token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributes\": {\r\n        \"refresh_token\":\"{{refreshToken}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/User/refreshTokens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"User",
+								"refreshTokens"
+							]
+						},
+						"description": "# Запрос на обновление токенов пользователя\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| refresh_token | + |\n\n### ResponseExample:\n\n``` json\n\"data\": {\n            \"token\": \"some_token\",\n            \"refresh_token\": \"some_token\"\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"refresh_token\":\"\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/refreshTokens",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"refreshTokens"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 11:26:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1303"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"aa894d96-6041-4f4a-b539-91b63a2e1b74\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"refreshTokens\",\n        \"parameters\": {\n            \"attributes\": {\n                \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidW1ydCIsImF1dGhfaWRlbnRpZmljYXRpb24iOjEwMSwiYWxpdmVfdW50aWwiOiIyMDIyLTEyLTA5VDExOjIzOjM4LjYwMzQ1NloifQ.6rHs5QQQo2DEnMgIbvqd1i8_hb3lyCKrWwYJ4cvljcU\"\n            }\n        },\n        \"token\": null\n    },\n    \"action_result\": {\n        \"uuid\": \"5cf42c2f-63ff-499e-b971-607566b82247\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbEBtYWlsLnJ1IiwiaXNfYWRtaW4iOmZhbHNlLCJwb2ludHMiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDIyLTEyLTAyVDExOjIzOjAxLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMi0xMi0wMlQxMToyMzowMS4wMDAwMDBaIiwiYXV0aF9pZGVudGlmaWNhdGlvbiI6MTAxLCJyb2xlcyI6WyJ1c2VyIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxMTozNjo1MS43ODI3NTBaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.t89Ki1cOkiBwhmsN89G466N12CnPC0AitCVxbMIN5VY\",\n            \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidW1ydCIsImF1dGhfaWRlbnRpZmljYXRpb24iOjEwMSwiYWxpdmVfdW50aWwiOiIyMDIyLTEyLTA5VDExOjI2OjUxLjc1Nzg5OVoifQ.XnYt_61ZZsc5c-yYmH0u_RY0-TR1KO7I0YPnYGI5SI8\"\n        }\n    },\n    \"action_error\": null\n}"
+						},
+						{
+							"name": "failed(500)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"refresh_token\":\"{{refreshToken}}1\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/refreshTokens",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"refreshTokens"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 11:27:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "594"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"cfc8c778-f2ee-4b73-8d35-fab1d73f8e3f\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"refreshTokens\",\n        \"parameters\": {\n            \"attributes\": {\n                \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidW1ydCIsImF1dGhfaWRlbnRpZmljYXRpb24iOjEwMSwiYWxpdmVfdW50aWwiOiIyMDIyLTEyLTA5VDExOjI2OjUxLjc1Nzg5OVoifQ.XnYt_61ZZsc5c-yYmH0u_RY0-TR1KO7I0YPnYGI5SI81\"\n            }\n        },\n        \"token\": null\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"ef7af3c5-17ce-4f78-9a33-ac00e5f43581\",\n        \"type\": \"action_error\",\n        \"code\": 0,\n        \"message\": \"Signature verification failed\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributes\": {\r\n        \"id\": 1,\r\n        \"email\": \"mail1@mail.ru\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/User/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"User",
+								"update"
+							]
+						},
+						"description": "# Запрос на редактирование данных пользователя\n\n**Description:** редактировать данные может только владелец записи.\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| id | + |\n| email | \\- |\n| password | \\- |\n| first_name | \\- |\n| last_name | \\- |\n\n### ResponseExample:\n\n``` json\n\"data\": {\n            \"id\": 1,\n            \"first_name\": \"Ivanov\",\n            \"last_name\": \"Ivan\",\n            \"email\": \"mail@mail.ru\",\n            \"created_at\": \"2022-12-02T11:23:01.000000Z\",\n            \"updated_at\": \"2022-12-02T11:28:01.000000Z\"\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "failed (405)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"id\": 93,\r\n        \"email\": \"zxc@asd.ru\",\r\n        \"first_name\": \"Zndrey\",\r\n        \"last_name\": \"Petrov\",\r\n        \"password\": \"qweasd123\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"update"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 11:27:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1060"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"e63b9f04-49fc-403a-a605-20f547fc87b4\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"update\",\n        \"parameters\": {\n            \"attributes\": {\n                \"id\": 93,\n                \"email\": \"zxc@asd.ru\",\n                \"first_name\": \"Zndrey\",\n                \"last_name\": \"Petrov\",\n                \"password\": \"qweasd123\"\n            }\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbEBtYWlsLnJ1IiwiaXNfYWRtaW4iOmZhbHNlLCJwb2ludHMiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDIyLTEyLTAyVDExOjIzOjAxLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMi0xMi0wMlQxMToyMzowMS4wMDAwMDBaIiwiYXV0aF9pZGVudGlmaWNhdGlvbiI6MTAxLCJyb2xlcyI6WyJ1c2VyIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxMTozNjo1MS43ODI3NTBaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.t89Ki1cOkiBwhmsN89G466N12CnPC0AitCVxbMIN5VY\"\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"876bd461-f7fe-4542-bf5b-eeec801f4bb9\",\n        \"type\": \"action_error\",\n        \"code\": 405,\n        \"message\": \"Validation failed! Rule check failed OwnerRule of id attribute!\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"id\": 101,\r\n        \"email\": \"mail1@mail.ru\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 11:28:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1079"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"c0a34eeb-9f55-40ae-82a9-4eb3ba98a26e\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"update\",\n        \"parameters\": {\n            \"attributes\": {\n                \"id\": 101,\n                \"email\": \"mail1@mail.ru\"\n            }\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbEBtYWlsLnJ1IiwiaXNfYWRtaW4iOmZhbHNlLCJwb2ludHMiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDIyLTEyLTAyVDExOjIzOjAxLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMi0xMi0wMlQxMToyMzowMS4wMDAwMDBaIiwiYXV0aF9pZGVudGlmaWNhdGlvbiI6MTAxLCJyb2xlcyI6WyJ1c2VyIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxMTozNjo1MS43ODI3NTBaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.t89Ki1cOkiBwhmsN89G466N12CnPC0AitCVxbMIN5VY\"\n    },\n    \"action_result\": {\n        \"uuid\": \"0bdf41db-906d-4ed2-83cd-56c42c3f5bd4\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"id\": 101,\n            \"first_name\": \"Ivanov\",\n            \"last_name\": \"Ivan\",\n            \"email\": \"mail1@mail.ru\",\n            \"is_admin\": false,\n            \"points\": null,\n            \"created_at\": \"2022-12-02T11:23:01.000000Z\",\n            \"updated_at\": \"2022-12-02T11:28:01.000000Z\"\n        }\n    },\n    \"action_error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":101\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/User/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"User",
+								"delete"
+							]
+						},
+						"description": "# Запрос на удаление данных пользователя\n\n**Description:** удалить данные может только владелец записи.\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| id | + |\n\n### ResponseExample:\n\n``` json\n   \"data\": {\n            \"message\": \"Entity deleted!\"\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "failed(404)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":3\r\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"delete"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Dec 2022 12:39:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "923"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"0c1914e8-feba-4eca-bfd0-d9fc4e289c9e\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"delete\",\n        \"parameters\": {\n            \"id\": 3\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MywiZmlyc3RfbmFtZSI6IkFuZHJleSIsImxhc3RfbmFtZSI6IlBldHJvdiIsImVtYWlsIjoienhjQGFzZC5ydSIsImlzX2FkbWluIjpmYWxzZSwicG9pbnRzIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0xMi0wMVQxMTozMTozOC4wMDAwMDBaIiwidXBkYXRlZF9hdCI6IjIwMjItMTItMDFUMTE6MzE6MzguMDAwMDAwWiIsImF1dGhfaWRlbnRpZmljYXRpb24iOjMsInJvbGVzIjpbInVzZXIiXSwicGVybWlzc2lvbnMiOltdfSwiYWxpdmVfdW50aWwiOiIyMDIyLTEyLTAxVDEyOjQ2OjUwLjQzMTY4OFoiLCJ0YXJnZXRfc2VydmljZV9uYW1lIjoiY29yZSJ9.IBpJ6RHQaRphFmmzGWY_pU9Dojs1t_eY6L0AGvPynuM\"\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"f7476959-85d7-44a7-8e1a-8bc333cedcc7\",\n        \"type\": \"action_error\",\n        \"code\": 404,\n        \"message\": \"Object not found with 3 identifier!\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":101\r\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/User/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"User",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 14:58:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "877"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"7c094191-2102-45c5-8566-4f30495ba21c\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"User\",\n        \"action_name\": \"delete\",\n        \"parameters\": {\n            \"id\": 101\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDFAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjQxNiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTE6MjM6MDEuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDEzOjQ5OjAxLjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDEsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNTowNzo1OS4wNTA3NThaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.cOT_fYuJ7PUXpsYjsN3HJUln7Jz5n7K7Ocyq8rq23io\"\n    },\n    \"action_result\": {\n        \"uuid\": \"8f0947ca-fd99-4907-b18a-505b52a28e03\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"message\": \"Entity deleted!\"\n        }\n    },\n    \"action_error\": null\n}"
+						}
+					]
+				}
+			],
+			"description": "# Модель пользователя\n\n### Attributes:\n\n| Attribute | Description | Attribute type |\n| --- | --- | --- |\n| id | Идентификатор записи | int |\n| email | Поле email | string |\n| first_name | Имя пользователя | string |\n| last_name | Фамилия пользователя | string |\n| password | Пароль пользователя | string |\n| is_admin | Check admin | bool |\n| points | Кол-во очков | int |\n| timestamps | Временные метки | dateTime |\n\n### Endpoints:\n\n| Endpoints | StatusAccess | RoleAccess |\n| --- | --- | --- |\n| getItems | logged | admin |\n| login | guest | \\- |\n| refreshTokens | guest | \\- |\n| create | guest | \\- |\n| update | logged | user,admin |\n| delete | logged | user,admin |\n\n### Validations:\n\n| Message | Description | Code |\n| --- | --- | --- |\n| Validation failed! The :attribute :message. | Валидационная ошибка ввода | 405 |\n| No access to action call | Нет доступа к вызову action | 403 |\n| Object not found | Объект не найден | 404 |\n| Incorrect Email or password! | Неправильные данные аутентификации | 401 |"
+		},
+		{
+			"name": "LotteryGame",
+			"item": [
+				{
+					"name": "getItems (guest)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/LotteryGame/getItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"LotteryGame",
+								"getItems"
+							]
+						},
+						"description": "# Запрос на получение всех лотерейных игр (guest)\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| none | none |\n\n### ResponseExample:\n\n``` json\n\"data\": {\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"qwe\",\n                    \"gamer_count\": 12,\n                    \"reward_points\": 123,\n                    \"created_at\": null,\n                    \"updated_at\": null\n                }\n            ]\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/LotteryGame/getItems",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGame",
+										"getItems"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Dec 2022 15:50:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "398"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"41bdb749-9fbe-4df4-9260-6088561ea1eb\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGame\",\n        \"action_name\": \"getItems\",\n        \"parameters\": [],\n        \"token\": null\n    },\n    \"action_result\": {\n        \"uuid\": \"6b62e4e9-cde7-491e-9257-e141e6147645\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"qwe\",\n                    \"gamer_count\": 12,\n                    \"reward_points\": 123,\n                    \"created_at\": null,\n                    \"updated_at\": null\n                }\n            ]\n        }\n    },\n    \"action_error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "getItems (logged)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/core/LotteryGame/getItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"LotteryGame",
+								"getItems"
+							]
+						},
+						"description": "# Запрос на получение всех лотерейных игр (logged)\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| none | none |\n\n### ResponseExample:\n\n``` json\n\"data\": {\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"qwe\",\n                    \"gamer_count\": 12,\n                    \"reward_points\": 123,\n                    \"created_at\": null,\n                    \"updated_at\": null\n                }\n            ]\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost/core/LotteryGame/getItems",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGame",
+										"getItems"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 15:01:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1159"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"a8e985d9-a407-40e1-ad07-96ae88d0c3d7\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGame\",\n        \"action_name\": \"getItems\",\n        \"parameters\": [],\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDFAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjQxNiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTE6MjM6MDEuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDEzOjQ5OjAxLjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDEsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNTowNzo1OS4wNTA3NThaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.cOT_fYuJ7PUXpsYjsN3HJUln7Jz5n7K7Ocyq8rq23io\"\n    },\n    \"action_result\": {\n        \"uuid\": \"0ae2f8c1-df6c-4286-a515-10d9edd1ed29\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"items\": [\n                {\n                    \"id\": 34,\n                    \"name\": \"dolorem\",\n                    \"gamer_count\": 28,\n                    \"reward_points\": 791,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T06:44:51.000000Z\"\n                },\n                {\n                    \"id\": 33,\n                    \"name\": \"cumque\",\n                    \"gamer_count\": 10,\n                    \"reward_points\": 416,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T06:44:51.000000Z\"\n                }\n            ]\n        }\n    },\n    \"action_error\": null\n}"
+						}
+					]
+				}
+			],
+			"description": "# Модель лотерейных игр\n\n### Attributes:\n\n| Attribute | Description | Attribute type |\n| --- | --- | --- |\n| id | Идентификатор записи | int |\n| name | Название игры | string |\n| gamer_count | Кол-во пользователей в одной игре | int |\n| reward_points | Награда за победу | int |\n| timestamps | Временные метки | dateTime |\n\n### Endpoints:\n\n| Endpoints | StatusAccess | RoleAccess |\n| --- | --- | --- |\n| getItems | guest, logged | user, admin |\n\n### Validations:\n\n| Message | Description | Code |\n| --- | --- | --- |\n| No access to action call | Нет доступа к вызову action | 403 |"
+		},
+		{
+			"name": "LotteryGameMatch",
+			"item": [
+				{
+					"name": "getItems (guest)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost/core/LotteryGameMatch/getItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"LotteryGameMatch",
+								"getItems"
+							]
+						},
+						"description": "# Запрос на получение всех матчей лотерейной игры (guest)\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| none | none |\n\n### ResponseExample:\n\n``` json\n\"data\": {\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"lottery_game_id\": 1,\n                    \"start_date\": \"2022-12-09\",\n                    \"start_time\": \"16:40:00\",\n                    \"winner_id\": 1,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T14:40:08.000000Z\"\n                }\n            ]\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost/core/LotteryGameMatch/getItems",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGameMatch",
+										"getItems"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 15:04:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1039"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"97462496-b9f2-446c-84b8-6bbfcb7f87d8\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGameMatch\",\n        \"action_name\": \"getItems\",\n        \"parameters\": [],\n        \"token\": null\n    },\n    \"action_result\": {\n        \"uuid\": \"7c9e8b22-ab32-4168-8a3b-d1ceef676226\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"items\": [\n                {\n                    \"id\": 25,\n                    \"lottery_game_id\": 33,\n                    \"start_date\": \"2022-12-09\",\n                    \"start_time\": \"16:40:00\",\n                    \"winner_id\": 103,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T14:40:08.000000Z\"\n                },\n                {\n                    \"id\": 26,\n                    \"lottery_game_id\": 33,\n                    \"start_date\": \"2022-12-14\",\n                    \"start_time\": \"16:09:00\",\n                    \"winner_id\": 97,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T06:44:51.000000Z\"\n                },\n                {\n                    \"id\": 27,\n                    \"lottery_game_id\": 34,\n                    \"start_date\": \"2022-12-16\",\n                    \"start_time\": \"12:01:00\",\n                    \"winner_id\": 97,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T06:44:51.000000Z\"\n                },\n                {\n                    \"id\": 28,\n                    \"lottery_game_id\": 34,\n                    \"start_date\": \"2022-12-04\",\n                    \"start_time\": \"19:10:00\",\n                    \"winner_id\": null,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T06:44:51.000000Z\"\n                }\n            ]\n        }\n    },\n    \"action_error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "getItems (logged)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/core/LotteryGameMatch/getItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"LotteryGameMatch",
+								"getItems"
+							]
+						},
+						"description": "# Запрос на получение всех матчей лотерейной игры (logged)\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| none | none |\n\n### ResponseExample:\n\n``` json\n\"data\": {\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"lottery_game_id\": 1,\n                    \"start_date\": \"2022-12-09\",\n                    \"start_time\": \"16:40:00\",\n                    \"winner_id\": 1,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T14:40:08.000000Z\"\n                }\n            ]\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost/core/LotteryGameMatch/getItems",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGameMatch",
+										"getItems"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 15:04:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1596"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"dfaded0c-fc98-4ef7-a54c-34d2d8396a55\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGameMatch\",\n        \"action_name\": \"getItems\",\n        \"parameters\": [],\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDFAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjQxNiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTE6MjM6MDEuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDEzOjQ5OjAxLjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDEsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNTowNzo1OS4wNTA3NThaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.cOT_fYuJ7PUXpsYjsN3HJUln7Jz5n7K7Ocyq8rq23io\"\n    },\n    \"action_result\": {\n        \"uuid\": \"66e0efae-7765-44a4-a5d5-aa3f4509fc05\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"items\": [\n                {\n                    \"id\": 25,\n                    \"lottery_game_id\": 33,\n                    \"start_date\": \"2022-12-09\",\n                    \"start_time\": \"16:40:00\",\n                    \"winner_id\": 103,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T14:40:08.000000Z\"\n                },\n                {\n                    \"id\": 26,\n                    \"lottery_game_id\": 33,\n                    \"start_date\": \"2022-12-14\",\n                    \"start_time\": \"16:09:00\",\n                    \"winner_id\": 97,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T06:44:51.000000Z\"\n                },\n                {\n                    \"id\": 27,\n                    \"lottery_game_id\": 34,\n                    \"start_date\": \"2022-12-16\",\n                    \"start_time\": \"12:01:00\",\n                    \"winner_id\": 97,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T06:44:51.000000Z\"\n                },\n                {\n                    \"id\": 28,\n                    \"lottery_game_id\": 34,\n                    \"start_date\": \"2022-12-04\",\n                    \"start_time\": \"19:10:00\",\n                    \"winner_id\": null,\n                    \"created_at\": \"2022-12-02T06:44:51.000000Z\",\n                    \"updated_at\": \"2022-12-02T06:44:51.000000Z\"\n                }\n            ]\n        }\n    },\n    \"action_error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributes\": {\r\n        \"game_id\":\"\",\r\n        \"start_date\":\"\",\r\n        \"start_time\":\"\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/LotteryGameMatch/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"LotteryGameMatch",
+								"create"
+							]
+						},
+						"description": "# Запрос на создание матча лотерейной игры\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| lottery_game_id | + |\n| start_date | + |\n| start_time | + |\n\n### ResponseExample:\n\n``` json\n\"data\": {\n            \"lottery_game_id\": 1,\n            \"start_date\": \"2022-12-02\",\n            \"start_time\": \"12:00\",\n            \"updated_at\": \"2022-12-01T15:52:08.000000Z\",\n            \"created_at\": \"2022-12-01T15:52:08.000000Z\",\n            \"id\": 2\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"lottery_game_id\": 1,\r\n        \"start_date\":\"2022-12-02\",\r\n        \"start_time\":\"12:00\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/LotteryGameMatch/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGameMatch",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Dec 2022 15:52:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1088"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"6551d2a6-bb24-493b-8514-c3408757b626\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGameMatch\",\n        \"action_name\": \"create\",\n        \"parameters\": {\n            \"attributes\": {\n                \"lottery_game_id\": 1,\n                \"start_date\": \"2022-12-02\",\n                \"start_time\": \"12:00\"\n            }\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MSwiZmlyc3RfbmFtZSI6IkFuZHJleSIsImxhc3RfbmFtZSI6IlBldHJvdiIsImVtYWlsIjoienhjQGFzZC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDIyLTEyLTAxVDE1OjQ5OjQzLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMi0xMi0wMVQxNTo0OTo0My4wMDAwMDBaIiwiYXV0aF9pZGVudGlmaWNhdGlvbiI6MSwicm9sZXMiOlsiYWRtaW4iXSwicGVybWlzc2lvbnMiOltdfSwiYWxpdmVfdW50aWwiOiIyMDIyLTEyLTAxVDE2OjAwOjQ3LjkwMDI5N1oiLCJ0YXJnZXRfc2VydmljZV9uYW1lIjoiY29yZSJ9.p5fF7hJsl4ciLhjYfPmHNorDdslyDUKYrjxE4cu17SQ\"\n    },\n    \"action_result\": {\n        \"uuid\": \"ede3c165-a3f5-4472-9933-cebc3a39e651\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"lottery_game_id\": 1,\n            \"start_date\": \"2022-12-02\",\n            \"start_time\": \"12:00\",\n            \"updated_at\": \"2022-12-01T15:52:08.000000Z\",\n            \"created_at\": \"2022-12-01T15:52:08.000000Z\",\n            \"id\": 2\n        }\n    },\n    \"action_error\": null\n}"
+						},
+						{
+							"name": "failed(405)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"lottery_game_id\": 1,\r\n        \"start_date\":\"2022-12-02\",\r\n        \"start_time\":\"12:00\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/LotteryGameMatch/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGameMatch",
+										"create"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 15:10:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1083"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"5403866d-58c8-4998-b266-2bf4e3b1d00f\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGameMatch\",\n        \"action_name\": \"create\",\n        \"parameters\": {\n            \"attributes\": {\n                \"lottery_game_id\": 1,\n                \"start_date\": \"2022-12-02\",\n                \"start_time\": \"12:00\"\n            }\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAzLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDJAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjgzMiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTQ6Mzg6MTkuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDE0OjQwOjA4LjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDMsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNToyMDoxMi4wMDE2ODBaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.qorxwHfYx6fQe4X-jpKatvVVt1P7wL86VVExq0UtacA\"\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"c8aa6012-0084-4c33-a09f-0fddd79b6157\",\n        \"type\": \"action_error\",\n        \"code\": 405,\n        \"message\": \"Validation failed! The selected lottery game id is invalid. The start date must be a date after today.\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "closeMatch",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributes\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/LotteryGameMatch/closeMatch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"LotteryGameMatch",
+								"closeMatch"
+							]
+						},
+						"description": "# Запрос на завершения матча лотерейной игры\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| id | + |\n\n### ResponseExample:\n\n``` json\n   \"data\": {\n            \"message\": \"Match completed successfully. WinnerID: 103\"\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"id\": 25\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/LotteryGameMatch/closeMatch",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGameMatch",
+										"closeMatch"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 14:40:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "935"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"1c9337b7-6538-44ba-bc3a-839be075e564\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGameMatch\",\n        \"action_name\": \"closeMatch\",\n        \"parameters\": {\n            \"attributes\": {\n                \"id\": 25\n            }\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAxLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDFAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjQxNiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTE6MjM6MDEuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDEzOjQ5OjAxLjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDEsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNDo0OToxNC4zOTAzNTdaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.iwqiNnyJH2dNN2IllDnLuF7GKySGeAFVYqRag3YKVns\"\n    },\n    \"action_result\": {\n        \"uuid\": \"8b59825f-fcc5-4b27-b980-b54338fbe781\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"message\": \"Match completed successfully. WinnerID: 103\"\n        }\n    },\n    \"action_error\": null\n}"
+						},
+						{
+							"name": "failed(400)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\": {\r\n        \"id\": 25\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/LotteryGameMatch/closeMatch",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGameMatch",
+										"closeMatch"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 15:10:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "949"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"f61dee74-cc2e-4979-b1b9-eac15206fa9b\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGameMatch\",\n        \"action_name\": \"closeMatch\",\n        \"parameters\": {\n            \"attributes\": {\n                \"id\": 25\n            }\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAzLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDJAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjgzMiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTQ6Mzg6MTkuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDE0OjQwOjA4LjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDMsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNToyMDoxMi4wMDE2ODBaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.qorxwHfYx6fQe4X-jpKatvVVt1P7wL86VVExq0UtacA\"\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"4463ca8b-f1da-43ac-aaad-f3d9bbf8418a\",\n        \"type\": \"action_error\",\n        \"code\": 400,\n        \"message\": \"Unable to update record\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "# Модель матча лотерейной игры\n\n### Attributes:\n\n| Attribute | Description | Attribute type |\n| --- | --- | --- |\n| id | Идентификатор записи | int |\n| lottery_game_id | Идентификатор лотерейной игры | int |\n| start_date | Дата начала матча | date(Y-m-d) |\n| start_time | Время начала матча | time(H-i) |\n| winner_id | Идентификатор победившего пользователя | int |\n| timestamps | Временные метки | dateTime |\n\n### Endpoints:\n\n| Endpoints | StatusAccess | RoleAccess |\n| --- | --- | --- |\n| getItems | guest, logged | user, admin |\n| create | logged | admin |\n| closeMatch | logged | admin |\n\n### Validations:\n\n| Message | Description | Code |\n| --- | --- | --- |\n| Validation failed! The :attribute :message. | Валидационная ошибка ввода | 405 |\n| No access to action call | Нет доступа к вызову action | 403 |\n| Object not found | Объект не найден | 404 |\n| Unable to update record | Невозможно обновить запись | 400 |"
+		},
+		{
+			"name": "LotteryGameMatchUser",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/core/LotteryGameMatchUser/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"LotteryGameMatchUser",
+								"create"
+							]
+						},
+						"description": "# Запрос на запись игрока на лотерейную игру\n\nStartFragmentStartFragment\n\n**Description:** пользователь может записаться только один раз и не больше максимального кол-ва участников в одной лотерейной игре.\n\n### RequestedAttributes:\n\n| Attribute | Required |\n| --- | --- |\n| user_id | + |\n| lottery_game_match_id | + |\n\n### ResponseExample:\n\n``` json\n        \"data\": {\n            \"user_id\": 103,\n            \"lottery_game_match_id\": 25,\n            \"updated_at\": \"2022-12-02T15:25:43.000000Z\",\n            \"created_at\": \"2022-12-02T15:25:43.000000Z\",\n            \"id\": 82\n        }\n\n```"
+					},
+					"response": [
+						{
+							"name": "failed(405)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\":{\r\n        \"user_id\": 101,\r\n        \"lottery_game_match_id\":25\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/LotteryGameMatchUser/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGameMatchUser",
+										"create"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 15:24:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1060"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"5cbf9dde-f68b-4d3c-a225-1b8d88dcb5ce\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGameMatchUser\",\n        \"action_name\": \"create\",\n        \"parameters\": {\n            \"attributes\": {\n                \"user_id\": 101,\n                \"lottery_game_match_id\": 25\n            }\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAzLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDJAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjgzMiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTQ6Mzg6MTkuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDE0OjQwOjA4LjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDMsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNTozNDoyNC4wODc5MDZaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.tRtbdHR1X8RtCE-3l9TwdfTzHkIWx9QLh1gATEKg71E\"\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"72a9b8ae-3efa-446a-920b-a61af7ae38d5\",\n        \"type\": \"action_error\",\n        \"code\": 405,\n        \"message\": \"Validation failed! The selected user id is invalid. Rule check failed OwnerRule of user id attribute!\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\":{\r\n        \"user_id\": 103,\r\n        \"lottery_game_match_id\":25\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/LotteryGameMatchUser/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGameMatchUser",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 15:25:43 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1047"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"17dbdc03-f5a5-4797-9fa9-9329d6fcdaef\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGameMatchUser\",\n        \"action_name\": \"create\",\n        \"parameters\": {\n            \"attributes\": {\n                \"user_id\": 103,\n                \"lottery_game_match_id\": 25\n            }\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAzLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDJAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjgzMiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTQ6Mzg6MTkuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDE0OjQwOjA4LjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDMsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNTozNDoyNC4wODc5MDZaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.tRtbdHR1X8RtCE-3l9TwdfTzHkIWx9QLh1gATEKg71E\"\n    },\n    \"action_result\": {\n        \"uuid\": \"0ddaff81-632a-4b07-a362-e24c9620004d\",\n        \"type\": \"action_result\",\n        \"data\": {\n            \"user_id\": 103,\n            \"lottery_game_match_id\": 25,\n            \"updated_at\": \"2022-12-02T15:25:43.000000Z\",\n            \"created_at\": \"2022-12-02T15:25:43.000000Z\",\n            \"id\": 82\n        }\n    },\n    \"action_error\": null\n}"
+						},
+						{
+							"name": "failed(400)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attributes\":{\r\n        \"user_id\": 103,\r\n        \"lottery_game_match_id\":25\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/core/LotteryGameMatchUser/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"core",
+										"LotteryGameMatchUser",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Dec 2022 15:25:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "swoole-http-server"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "982"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": {\n        \"uuid\": \"08e27bc9-c40d-41b4-b6bc-c4aab036441c\",\n        \"type\": \"action\",\n        \"service_name\": \"core\",\n        \"model_name\": \"LotteryGameMatchUser\",\n        \"action_name\": \"create\",\n        \"parameters\": {\n            \"attributes\": {\n                \"user_id\": 103,\n                \"lottery_game_match_id\": 25\n            }\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoidXN0IiwiYXV0aF9pbmZvcm1hdGlvbiI6eyJpZCI6MTAzLCJmaXJzdF9uYW1lIjoiSXZhbm92IiwibGFzdF9uYW1lIjoiSXZhbiIsImVtYWlsIjoibWFpbDJAbWFpbC5ydSIsImlzX2FkbWluIjp0cnVlLCJwb2ludHMiOjgzMiwiY3JlYXRlZF9hdCI6IjIwMjItMTItMDJUMTQ6Mzg6MTkuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTEyLTAyVDE0OjQwOjA4LjAwMDAwMFoiLCJhdXRoX2lkZW50aWZpY2F0aW9uIjoxMDMsInJvbGVzIjpbImFkbWluIl0sInBlcm1pc3Npb25zIjpbXX0sImFsaXZlX3VudGlsIjoiMjAyMi0xMi0wMlQxNTozNDoyNC4wODc5MDZaIiwidGFyZ2V0X3NlcnZpY2VfbmFtZSI6ImNvcmUifQ.tRtbdHR1X8RtCE-3l9TwdfTzHkIWx9QLh1gATEKg71E\"\n    },\n    \"action_result\": null,\n    \"action_error\": {\n        \"uuid\": \"ad3905cd-2fa8-41e0-a395-0ff2e793f256\",\n        \"type\": \"action_error\",\n        \"code\": 400,\n        \"message\": \"Unable to create record\",\n        \"internal_code\": null,\n        \"data\": null\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "# Модель пользователя матча лотерейной игры\n\n### Attributes:\n\n| Attribute | Description | Attribute type |\n| --- | --- | --- |\n| id | Идентификатор записи | int |\n| user_id | Идентификатор пользователя | int |\n| lottery_game_match_id | Идентификатор матча лотерейной игры | int |\n| timestamps | Временные метки | dateTime |\n\n### Endpoints:\n\n| Endpoints | StatusAccess | RoleAccess |\n| --- | --- | --- |\n| create | logged | user, admin |\n\n### Validations:\n\n| Message | Description | Code |\n| --- | --- | --- |\n| Validation failed! The :attribute :message. | Валидационная ошибка ввода | 405 |\n| No access to action call | Нет доступа к вызову action | 403 |\n| Unable to create record | Невозможно обновить запись | 400 |"
+		}
+	]
+}
