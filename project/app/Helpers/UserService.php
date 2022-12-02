@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Services;
+namespace App\Helpers;
 
 use App\Models\User;
 use Egal\Auth\Tokens\UserMasterRefreshToken;
-use Egal\Auth\Tokens\UserMasterToken;
 use Egal\Auth\Tokens\UserServiceToken;
-use Egal\AuthServiceDependencies\Exceptions\UserNotIdentifiedException;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
-use JetBrains\PhpStorm\ArrayShape;
+use Illuminate\Http\Response;
 
 class UserService
 {
@@ -21,7 +19,7 @@ class UserService
         $user = User::query()->where('email', $email)->first();
 
         if (!$user || !password_verify($password, $user->getAttribute('password'))) {
-            throw new Exception('Incorrect Email or password!', 403);
+            throw new Exception('Incorrect Email or password!', Response::HTTP_UNAUTHORIZED);
         }
 
         return $user;

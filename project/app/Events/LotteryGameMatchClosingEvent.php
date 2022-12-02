@@ -4,7 +4,7 @@ namespace App\Events;
 
 use Sixsad\Helpers\AbstractEvent;
 
-class UserDeletingEvent extends AbstractEvent
+class LotteryGameMatchClosingEvent extends AbstractEvent
 {
 
 }

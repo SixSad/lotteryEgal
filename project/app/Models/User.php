@@ -2,33 +2,30 @@
 
 namespace App\Models;
 
-use App\Events\UserDeletingEvent;
-use App\Events\UserUpdatingEvent;
-use App\Helpers\SessionHelper;
-use App\Services\UserService;
+use App\Helpers\UserService;
 use Carbon\Carbon;
 use Egal\AuthServiceDependencies\Models\User as BaseUser;
-use Egal\Core\Session\Session;
-use Egal\Model\With\Collection;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 
 /**
- * @property int $id            {@property-type field} {@primary-key}
+ * @property int $id            {@property-type field} {@primary-key}   {@validation-rules owner}
  * @property string $first_name {@property-type field} {@validation-rules required|string}
  * @property string $last_name  {@property-type field} {@validation-rules required|string}
  * @property string $email      {@property-type field} {@validation-rules required|email:dns|unique:users}
  * @property string $password   {@property-type field} {@validation-rules required|string}
- * @property bool $is_admin     {@property-type field} {@validation-rules bool}
- * @property int $points        {@property-type field} {@validation-rules integer}
+ * @property bool $is_admin     {@property-type field} {@validation-rules type:boolean}
+ * @property int $points        {@property-type field} {@validation-rules nullable|type:integer}
  * @property Carbon $created_at {@property-type field}
  * @property Carbon $updated_at {@property-type field}
  *
- * @property Collection $win_games {@property-type relation}
- * @property Collection $user_matches {@property-type relation}
+ * @property Collection $win_games              {@property-type relation}
+ * @property Collection $lottery_game_matches   {@property-type relation}
  *
- * @action getItems         {@statuses-access logged} {@roles-access user|admin}
+ * @action getItems         {@statuses-access logged} {@roles-access admin}
  * @action create           {@statuses-access guest}
  * @action update           {@statuses-access logged} {@roles-access user|admin}
  * @action delete           {@statuses-access logged} {@roles-access user|admin}
@@ -37,34 +34,18 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class User extends BaseUser
 {
+    use HasFactory;
 
     protected $fillable = [
         'first_name',
         'last_name',
         'email',
         'password',
-        'is_admin',
-        'points'
-    ];
-
-    protected $dispatchesEvents = [
-        'updating' => UserUpdatingEvent::class,
-        'deleting' => UserDeletingEvent::class
     ];
 
     protected $hidden = [
         'password',
     ];
-
-    public function newQuery()
-    {
-
-        if (Session::getActionMessage()->getActionName() === 'getItems' && SessionHelper::getRole() !== 'admin') {
-            return parent::newQuery()->where('id', '=', SessionHelper::getId());
-        }
-
-        return parent::newQuery();
-    }
 
     protected function password(): Attribute
     {
@@ -100,14 +81,14 @@ class User extends BaseUser
 
     }
 
-    protected function winGames(): HasMany
+    public function winGames(): HasMany
     {
         return $this->hasMany(LotteryGameMatch::class, 'winner_id');
     }
 
-    protected function userMatches(): BelongsToMany
+    public function lotteryGameMatches(): BelongsToMany
     {
-        return $this->belongsToMany(LotteryGameMatch::class);
+        return $this->belongsToMany(LotteryGameMatch::class, 'lottery_game_match_users', 'user_id', 'lottery_game_match_id');
     }
 
 }
