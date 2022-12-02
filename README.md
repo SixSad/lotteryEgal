@@ -5,6 +5,7 @@
 - Подготовка перед запуском проекта
 ```
 cp .env .env.example
+cd project/ && composer install --ignore-platform-reqs
 ```
 - Запуск и сборка контейнеров:
 ```

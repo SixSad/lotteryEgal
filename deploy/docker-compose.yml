@@ -21,7 +21,6 @@ services:
 
   core-service:
     container_name: ${PROJECT_NAME:-project}-core-service
-    build: ../project
     tty: true
     restart: on-failure
     depends_on:

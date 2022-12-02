@@ -31,6 +31,7 @@ services:
       - ${DATABASE_PORT:-5432}:5432
 
   core-service:
+    build: ../project
     environment:
       APP_SERVICE_NAME: ${APP_SERVICE_NAME:-core}
       APP_SERVICE_KEY: ${APP_SERVICE_KEY:-w8D3A9XNhR0ckQlGo*%LWFfPzuHEKxj4}
@@ -47,7 +48,7 @@ services:
       WAIT_HOSTS: ${PROJECT_NAME:-project}-rabbitmq:5672, ${PROJECT_NAME:-project}-database:5432
     volumes:
       - ../project/:/app/
-    command: ./artisan egal:run
+    command: sh -c "php artisan egal:run"
 
   adminer:
     ports:
