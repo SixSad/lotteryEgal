@@ -7,6 +7,7 @@ use App\Events\LotteryGameMatchUserCreatingEvent;
 use App\Listeners\CheckGamerCountListener;
 use App\Listeners\DuplicationCheckListener;
 use App\Listeners\PickingWinnerListener;
+use App\Listeners\PickingWinnerTransactionListener;
 use App\Listeners\ScoringPointsListener;
 use App\Listeners\ValidatingClosingRequestListener;
 use Laravel\Lumen\Providers\EventServiceProvider as ServiceProvider;
@@ -24,9 +25,7 @@ class EventServiceProvider extends ServiceProvider
             CheckGamerCountListener::class
         ],
         LotteryGameMatchClosingEvent::class => [
-            ValidatingClosingRequestListener::class,
-            PickingWinnerListener::class,
-            ScoringPointsListener::class
+            PickingWinnerTransactionListener::class
         ]
     ];
 

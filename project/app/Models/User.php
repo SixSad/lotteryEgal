@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use App\Helpers\UserService;
+use App\Exceptions\UnableToAuthenticateException;
+use App\Services\UserService;
 use Carbon\Carbon;
 use Egal\AuthServiceDependencies\Models\User as BaseUser;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -10,6 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
+use Throwable;
 
 /**
  * @property int $id            {@property-type field} {@primary-key}   {@validation-rules owner}
@@ -64,13 +66,29 @@ class User extends BaseUser
         return $this->getAttribute('is_admin') ? ['admin'] : ['user'];
     }
 
+    /**
+     * @param array $attributes
+     * @return array
+     * @throws UnableToAuthenticateException
+     */
     public static function actionLogin(array $attributes): array
     {
-        $user = UserService::checkPassword($attributes['email'], $attributes['password']);
+        throw_if(
+            !UserService::authenticate(
+                $attributes['email'],
+                $attributes['password']
+            ), UnableToAuthenticateException::class
+        );
+        /** @var User $user */
+        $user = UserService::getUserByEmail($attributes['email']);
 
         return UserService::setTokens($user->getAuthIdentifier(), $user->generateAuthInformation());
     }
 
+    /**
+     * @param array $attributes
+     * @return array
+     */
     public static function actionRefreshTokens(array $attributes): array
     {
         $aliveRefreshToken = UserService::checkRefreshToken($attributes['refresh_token']);

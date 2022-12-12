@@ -20,6 +20,7 @@ class CreateLotteryGameMatchUsersTable extends Migration
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('lottery_game_match_id')->constrained('lottery_game_matches')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
+            $table->unique(['user_id', 'lottery_game_match_id']);
         });
     }
 

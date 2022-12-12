@@ -1,29 +1,20 @@
 <?php
 
-namespace App\Helpers;
+namespace App\Services;
 
 use App\Models\User;
 use Egal\Auth\Tokens\UserMasterRefreshToken;
 use Egal\Auth\Tokens\UserServiceToken;
-use Exception;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Response;
 
 class UserService
 {
-    /**
-     * @throws Exception
-     */
-    public static function checkPassword(string $email, string $password): Model
+    public static function authenticate(string $email, string $password): bool
     {
-        $user = User::query()->where('email', $email)->first();
+        /** @var User $user */
+        $user = self::getUserByEmail($email);
 
-        if (!$user || !password_verify($password, $user->getAttribute('password'))) {
-            throw new Exception('Incorrect Email or password!', Response::HTTP_UNAUTHORIZED);
-        }
-
-        return $user;
-
+        return password_verify($password, $user?->getAttribute('password'));
     }
 
     public static function setTokens(int|string $authIdentifier, array $authInformation): array
@@ -51,6 +42,11 @@ class UserService
         $oldUmrt = UserMasterRefreshToken::fromJWT($refreshToken, config('app.service_key'));
         $oldUmrt->isAliveOrFail();
         return $oldUmrt;
+    }
+
+    public static function getUserByEmail(string $email): Model|null
+    {
+        return User::query()->where('email', $email)->first();
     }
 
 }

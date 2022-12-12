@@ -6,22 +6,27 @@ use App\Exceptions\UnableToCreateException;
 use App\Models\LotteryGameMatchUser;
 use Sixsad\Helpers\AbstractEvent;
 use Sixsad\Helpers\AbstractListener;
-use Throwable;
 
 class DuplicationCheckListener extends AbstractListener
 {
     /**
-     * @throws Throwable
+     * @throws UnableToCreateException
      */
     public function handle(AbstractEvent $event): void
     {
+        /** @var LotteryGameMatchUser $model */
         $model = $event->getModel();
+
         $record = LotteryGameMatchUser::query()->where([
             'user_id' => $model->getAttribute('user_id'),
             'lottery_game_match_id' => $model->getAttribute('lottery_game_match_id')
         ])->exists();
 
-        throw_if($record, UnableToCreateException::class);
+        throw_if(
+            $record,
+            UnableToCreateException::class,
+            'You already enroll'
+        );
 
     }
 }
