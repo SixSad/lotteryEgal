@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Exceptions\UnableToCreateException;
 use App\Models\LotteryGameMatchUser;
+use Illuminate\Support\Facades\DB;
 use Sixsad\Helpers\AbstractEvent;
 use Sixsad\Helpers\AbstractListener;
 

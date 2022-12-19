@@ -17,12 +17,8 @@ class CheckGamerCountListener extends AbstractListener
      */
     public function handle(AbstractEvent $event): void
     {
-        User::query()->sharedLock();
         /** @var LotteryGameMatchUser $model */
         $model = $event->getModel();
-
-        DB::beginTransaction();
-        DB::raw('LOCK TABLE lottery_game_match_users EXCLUSIVE');
 
         /** @var int $lotteryGamerCount */
         $lotteryGamerCount = LotteryGameMatch::query()
@@ -34,14 +30,11 @@ class CheckGamerCountListener extends AbstractListener
             ->where('lottery_game_match_id', $model->getAttribute('lottery_game_match_id'))
             ->count();
 
-        DB::commit();
-
         throw_if(
             $lotteryMatchUsers >= $lotteryGamerCount,
             UnableToCreateException::class,
             'No places'
         );
-
     }
 
 }

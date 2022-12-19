@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Sixsad\Helpers\AbstractEvent;
 use Sixsad\Helpers\AbstractListener;
 
-class PickingWinnerTransactionListener extends AbstractListener
+class CloseMatchTransactionListener extends AbstractListener
 {
     /**
      * @throws UnableToUpdateException

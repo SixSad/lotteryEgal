@@ -26,6 +26,7 @@ class ScoringPointsListener extends AbstractListener
             $winner = $model->winner()->firstOrFail();
             /** @var LotteryGame $lotteryGame */
             $lotteryGame = $model->lotteryGame()->firstOrFail();
+
             $winner->increment('points', $lotteryGame->getAttribute('reward_points'));
 
         } catch (Exception $e) {

@@ -18,6 +18,8 @@ class LotteryGameMatchFactory extends Factory
             'lottery_game_id' => LotteryGame::factory(),
             'start_date' => Carbon::parse($this->faker->dateTimeBetween('+ 1 day', '+ 1 month'))->format('Y-m-d'),
             'start_time' => $this->faker->time('H:i'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ];
     }
 

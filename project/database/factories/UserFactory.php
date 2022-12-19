@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UserFactory extends Factory
@@ -27,7 +28,9 @@ class UserFactory extends Factory
             'email' => $this->faker->email,
             'password' => $this->faker->password,
             'is_admin' => $this->faker->boolean(10),
-            'points' => 0
+            'points' => 0,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ];
     }
 }

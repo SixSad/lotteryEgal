@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\LotteryGame;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LotteryGameFactory extends Factory
@@ -14,7 +15,9 @@ class LotteryGameFactory extends Factory
         return [
             'name' => $this->faker->unique()->word,
             'gamer_count' => $this->faker->numberBetween(6, 100),
-            'reward_points' => $this->faker->numberBetween(11, 1000)
+            'reward_points' => $this->faker->numberBetween(11, 1000),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ];
     }
 

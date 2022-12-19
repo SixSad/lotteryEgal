@@ -16,7 +16,7 @@ class OwnerRule extends EgalRule
 
     public function message(): string
     {
-        return parent::message(); // TODO
+        return parent::message();
     }
 
 }

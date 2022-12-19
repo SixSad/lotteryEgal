@@ -2,7 +2,6 @@
 
 namespace App\Listeners;
 
-use App\Events\LotteryGameMatchClosingEvent;
 use App\Exceptions\UnableToUpdateException;
 use App\Models\LotteryGameMatch;
 use Exception;
